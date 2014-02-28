@@ -11,14 +11,17 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet"></head>
-
+    <link href="css/style.css" rel="stylesheet"></head>
+    <style>
+  .angular-openlayers-map {
+    width: 640px;
+    height: 480px;
+  }
+</style>
 <body ng-controller="HomePageController">
-    <div class="container">
-        <section class="margin-top-md">
-            <!-- Map goes here -->
-        </section>
-    </div>
-
+<div class="angular-openlayers-map">
+    <openlayers height="480px" width="640px"></openlayers>
+</div>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="lib/jquery-1.10.2.min.js"></script>
 
@@ -33,6 +36,12 @@
 
     <!--  LESS Compiler JS  -->
     <script src="lib/less-1.6.1.min.js" type="text/javascript"></script>
+
+    <!--  OPENLAYESRS JS  -->
+    <script src="lib/OpenLayers.js" type="text/javascript"></script>
+
+    <!-- Angularjs Openlayers plugin -->
+    <script src="vend/angular-openlayers-directive.js" type="text/javascript"></script>
 
     <!--  Custom JS files  -->
     <script src="js/app.js" type="text/javascript"></script>
