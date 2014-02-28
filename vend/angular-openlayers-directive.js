@@ -50,7 +50,6 @@ angular.module("openlayers-directive", []).directive('openlayers', function ($lo
 
             // If no layers nor tiles defined, set the default tileLayer
             if (!isDefined(attrs.tiles) && (!isDefined(attrs.layers))) {
-                console.log(attrs.layers);
                 var layer = getLayerObject(defaults.tileLayer);
                 map.addLayer(layer);
             }
@@ -290,6 +289,32 @@ angular.module("openlayers-directive").factory('olHelpers', function ($q, $log) 
                         };
                     }
                     oLayer = new OpenLayers.Layer.OSM(name, url, options);
+                    break;
+
+                    case 'TMS':
+                    var name, url, options={};
+                     if (layer.name) {
+                        name = layer.name;
+                    }
+                    if (layer.url) {
+                        url = layer.url;
+                        if (!isDefined(name)) {
+                            name = "TMS Layer";
+                        }
+                    }
+                    if (layer.projection) {
+                        angular.extend(options,{projection: new OpenLayers.Projection(layer.projection)});
+                    }
+                    if(layer.serviceVersion){
+                        angular.extend(options,{serviceVersion: layer.serviceVersion});
+                    }
+                    if(layer.fileExtension){
+                        angular.extend(options,{type: layer.fileExtension});
+                    }
+                    if(layer.layername){
+                        angular.extend(options,{layername: layer.layername});
+                    }
+                    oLayer = new OpenLayers.Layer.TMS(name, url, options);
                     break;
             }
 
