@@ -1,12 +1,17 @@
 angular.module('test.controllers', []).
 controller('HomePageController', ['$scope',
 	function($scope) {
-		$scope.defaults= {
-			tileLayer: "http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
-			maxZoom: 14,
+		$scope.defaults = {
+			tileLayer: {
+				type: "OSM",
+				url: "pics/cat_${x}_${y}.jpg"
+				//url: "http://a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"
+			},
+			//tileLayer: "pics/cat_{x}_{y}.jpg",
+			maxZoom: 1,
 			path: {
 				weight: 10,
-				color: '#800000',
+				color: '#80000',
 				opacity: 1
 			}
 		}
