@@ -14,6 +14,11 @@ div.olControlAttribution {
 }
 
 div.olControlAttribution a {
-   color: #eeeeee;
-   font-weight: bold;
+    color: #eeeeee;
+    font-weight: bold;
+}
+
+.angular-openlayers-map {
+    width: 1024px;
+    height: 768px;
 }
