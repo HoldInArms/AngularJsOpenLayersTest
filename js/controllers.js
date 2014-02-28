@@ -2,9 +2,13 @@ angular.module('test.controllers', []).
 controller('HomePageController', ['$scope',
 	function($scope) {
 		$scope.defaults = {
+
 			tileLayer: {
-				type: "OSM",
-				url: "pics/cat_${x}_${y}.jpg"
+				type: "TMS",
+				url: "pics/cat/",
+				serviceVersion: "dev",
+				layername: "basic",
+				fileExtension: "jpg"
 				//url: "http://a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"
 			},
 			//tileLayer: "pics/cat_{x}_{y}.jpg",
