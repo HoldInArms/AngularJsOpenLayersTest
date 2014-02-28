@@ -1,4 +1,6 @@
 var test = angular.module('test', [
 	"ngRoute",
-	"test.controllers"
+	"test.controllers",
+	"openlayers-directive"
 ]);
+
